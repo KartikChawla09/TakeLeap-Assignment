@@ -2,7 +2,12 @@
 
 ## Introduction
 
-Welcome to the TakeLeap Assignment Submission project! This repository contains the codebase for the TakeLeap assignment. Follow the instructions below to set up and run the project on your local machine.
+This is my submission for TakeLeap Assignment ! This repository contains the codebase for the TakeLeap assignment. Follow the instructions below to set up and run the project on your local machine.
+
+## Visit the Deployed Site
+
+To visit the deployed version of the site, go to [https://kartiktakeleap.netlify.app/](https://kartiktakeleap.netlify.app/).
+
 
 ## Installation Instructions
 
