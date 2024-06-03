@@ -2,5 +2,5 @@
   functions = "netlify/functions"
 [[redirects]]
   from = "/api/*"
-  to = "https://universities.hipolabs.com/:splat"
+  to = "http://universities.hipolabs.com/:splat"
   status = 200
