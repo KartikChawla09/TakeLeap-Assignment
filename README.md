@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This is my submission for TakeLeap Assignment ! This repository contains the codebase for the TakeLeap assignment. Follow the instructions below to set up and run the project on your local machine.
+This is my submission for TakeLeap Assignment! This repository contains the codebase for the entire project. Follow the instructions below to set up and run the project on your local machine.
 
 ## Visit the Deployed Site
 
