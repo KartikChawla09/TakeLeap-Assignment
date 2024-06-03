@@ -1,18 +1,17 @@
-// netlify/functions/fetchUniversities.js
-
-const fetch = require("node-fetch");
-
-exports.handler = async (event, context) => {
-  const query = event.queryStringParameters.name;
+import fetch from "node-fetch";
+export async function handler(event, context) {
+  const { name } = event.queryStringParameters;
 
   try {
     const response = await fetch(
-      `http://universities.hipolabs.com/search?name=${query}`
+      `http://universities.hipolabs.com/search?name=${name}`
     );
     if (!response.ok) {
       return {
         statusCode: response.status,
-        body: JSON.stringify({ error: "Network response was not ok" }),
+        body: JSON.stringify({
+          error: "Error fetching data from universities API",
+        }),
       };
     }
 
@@ -24,7 +23,7 @@ exports.handler = async (event, context) => {
   } catch (error) {
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: "Error fetching data" }),
+      body: JSON.stringify({ error: "Internal Server Error" }),
     };
   }
-};
+}
