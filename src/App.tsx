@@ -25,7 +25,7 @@ function App() {
   useEffect(() => {
     if (query.length > 0) {
       setLoading(true);
-      fetch(`http://universities.hipolabs.com/search?name=${query}`)
+      fetch(`/api/search?name=${query}`)
         .then((response) => {
           if (!response.ok) {
             throw new Error("Network response was not ok");
