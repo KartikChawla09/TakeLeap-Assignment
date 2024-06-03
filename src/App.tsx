@@ -65,7 +65,7 @@ function App() {
         <div className="line"></div>
       </div>
       <h1>University Search</h1>
-      {error && <p>Error: {error}</p>}{" "}
+      {error && <p className="Error">Error: {error}</p>}{" "}
       {/* Display error message if error state is not null */}
       <div className="Search">
         <Autocomplete

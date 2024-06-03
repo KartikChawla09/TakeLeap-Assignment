@@ -1,20 +1,22 @@
-import fetch from "node-fetch";
-export async function handler(event, context) {
-  const { name } = event.queryStringParameters;
+const fetch = require("node-fetch");
+
+exports.handler = async (event, context) => {
+  const query = event.queryStringParameters.name;
+
+  if (!query) {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({ error: "Missing 'name' query parameter" }),
+    };
+  }
+
+  const url = `http://universities.hipolabs.com/search?name=${query}`;
 
   try {
-    const response = await fetch(
-      `http://universities.hipolabs.com/search?name=${name}`
-    );
+    const response = await fetch(url);
     if (!response.ok) {
-      return {
-        statusCode: response.status,
-        body: JSON.stringify({
-          error: "Error fetching data from universities API",
-        }),
-      };
+      throw new Error("Network response was not ok");
     }
-
     const data = await response.json();
     return {
       statusCode: 200,
@@ -23,7 +25,7 @@ export async function handler(event, context) {
   } catch (error) {
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: "Internal Server Error" }),
+      body: JSON.stringify({ error: "Failed to fetch data" }),
     };
   }
-}
+};

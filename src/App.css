@@ -11,6 +11,9 @@ body {
   position: relative;
   overflow: hidden;
 }
+.Error {
+  color: #fff;
+}
 .App {
   padding: 2rem;
   display: flex;
