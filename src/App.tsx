@@ -25,9 +25,7 @@ function App() {
   useEffect(() => {
     if (query.length > 0) {
       setLoading(true);
-      // Reset error state
-      setError(null);
-      fetch(`https://universities.hipolabs.com/search?name=${query}`)
+      fetch(`/.netlify/functions/fetchUniversities?name=${query}`)
         .then((response) => {
           if (!response.ok) {
             throw new Error("Network response was not ok");
@@ -38,9 +36,9 @@ function App() {
           setData(data);
           setUniversityNames(data.map((university) => university.name));
           setLoading(false);
+          setError(null);
         })
         .catch((_error) => {
-          // Set error message
           setError("Error fetching data. Please try again later.");
           setLoading(false);
         });
