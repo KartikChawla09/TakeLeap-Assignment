@@ -27,7 +27,7 @@ function App() {
       setLoading(true);
       // Reset error state
       setError(null);
-      fetch(`http://universities.hipolabs.com/search?name=${query}`)
+      fetch(`https://universities.hipolabs.com/search?name=${query}`)
         .then((response) => {
           if (!response.ok) {
             throw new Error("Network response was not ok");
